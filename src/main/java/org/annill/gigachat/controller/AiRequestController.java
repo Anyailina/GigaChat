@@ -7,15 +7,21 @@ import org.annill.gigachat.service.AiRequestService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/ai")
+@RequestMapping("/ai/request")
 @AllArgsConstructor
 @Slf4j
 public class AiRequestController {
     private final AiRequestService aiRequestService;
 
     @SneakyThrows
-    @PostMapping("/ai/request")
-    public String sell(@RequestBody String word) {
-        return aiRequestService.getAnswer(word);
+    @PostMapping("/text")
+    public String aiTextRequest(@RequestBody String word) {
+        return aiRequestService.getTextAnswer(word);
+    }
+
+    @GetMapping("/image")
+    @CrossOrigin
+    public byte[] aiImageRequest() {
+        return aiRequestService.getImage("cat");
     }
 }

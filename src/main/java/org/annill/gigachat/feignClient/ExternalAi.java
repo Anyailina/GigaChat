@@ -1,4 +1,4 @@
-package org.annill.gigachat;
+package org.annill.gigachat.feignClient;
 
 
 import feign.Headers;
@@ -10,8 +10,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "ai", configuration = RequestFeignConfig.class)
-public interface ExternalAiFeignClient {
+public interface ExternalAi {
     @Headers("Authorization: Bearer {token}")
     @RequestLine("POST /api/v1/chat/completions")
     String getAnswer(@RequestBody RequestAiDto request, @Param("token") String token);
+
 }

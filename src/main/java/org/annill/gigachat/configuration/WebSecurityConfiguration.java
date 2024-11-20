@@ -36,7 +36,7 @@ public class WebSecurityConfiguration {
         }
 
         KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-        keyStore.load(null, null);  // Пустой keystore
+        keyStore.load(null, null);
         keyStore.setCertificateEntry("cert", certificate);
 
         TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());

@@ -10,8 +10,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableCaching
 class GigaChatApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
